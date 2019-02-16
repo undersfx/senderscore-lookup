@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 
+from argparse import ArgumentParser
 import socket
 
 def get_senderscore(ip):
-    '''Retrieve the score of a IP from SenderScore aplication'''
+    '''Retrieve the score of a IP from Sender Score aplication'''
 
     try:
         socket.inet_aton(ip)
     except OSError:
-        print('Not a valid IP.')
+        print('Error: Not a valid IP')
         return
 
     tmp = ip.split('.')
@@ -18,9 +19,13 @@ def get_senderscore(ip):
 
     for rl in replists:
         host = '{}.{}'.format(backwards, rl)
-        ret = socket.gethostbyname(host)
-        if ret:
-            lookup_results[rl] = ret
+        try:
+            ret = socket.gethostbyname(host)
+        except socket.gaierror as e:
+            print('Error: No score found')
+        else:
+            if ret:
+                lookup_results[rl] = ret
 
     scores = {}
 
@@ -30,5 +35,17 @@ def get_senderscore(ip):
 
     return scores
 
+parser = ArgumentParser(prog='Sender Score Lookup',
+                        description='Retrieve the score of a IP from Sender Score aplication.',
+                        fromfile_prefix_chars='@',
+                        argument_default='s')
+
+parser.add_argument('ip', action='store', help='IP to be tested by Sender Score')
+
 if __name__ == '__main__':
-    # TODO: argparse/sys.args
+    args = parser.parse_args()
+
+    score = get_senderscore(args.ip)
+
+    if score:
+        print(score['score.senderscore.com'])
