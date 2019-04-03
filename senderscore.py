@@ -23,6 +23,7 @@ def get_senderscore(ip):
             ret = socket.gethostbyname(host)
         except socket.gaierror as e:
             print('Error: No score found')
+            return
         else:
             if ret:
                 lookup_results[rl] = ret
