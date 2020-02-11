@@ -43,10 +43,15 @@ parser = ArgumentParser(prog='Sender Score Lookup',
 
 parser.add_argument('ip', action='store', help='IP to be tested by Sender Score')
 
-if __name__ == '__main__':
+
+def main():
     args = parser.parse_args()
 
     score = get_senderscore(args.ip)
 
     if score:
         print('{} has senderscore {}'.format(args.ip, score['score.senderscore.com']))
+
+
+if __name__ == '__main__':
+    main()
