@@ -9,7 +9,7 @@ More information at www.senderscore.org.'''
   
 setup( 
         name ='senderscore', 
-        version ='0.1.0', 
+        version ='0.1.1', 
         author ='Thiago "Undersfx" Rodrigues', 
         author_email ='undersoft.corp@gmail.com', 
         url ='https://github.com/undersfx/senderscore-lookup', 
