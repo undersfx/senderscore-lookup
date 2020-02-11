@@ -49,4 +49,4 @@ if __name__ == '__main__':
     score = get_senderscore(args.ip)
 
     if score:
-        print('{} score: {}'.format(args.ip, score['score.senderscore.com']))
+        print('{} has senderscore {}'.format(args.ip, score['score.senderscore.com']))
