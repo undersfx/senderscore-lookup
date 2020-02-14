@@ -4,6 +4,7 @@ from argparse import ArgumentParser
 import socket
 import os
 
+
 def validade_ip(ip):
     try:
         socket.inet_aton(ip)
@@ -11,41 +12,25 @@ def validade_ip(ip):
         print('Error: Not a valid IP')
         os.sys.exit(1)
 
+
 def get_senderscore(ip):
     '''Retrieve the score of a IP from Sender Score aplication'''
 
     validade_ip(ip)
 
-    tmp = ip.split('.')
-    backwards = '{}.{}.{}.{}'.format(tmp[3], tmp[2], tmp[1], tmp[0])
-    replists = ['score.senderscore.com']
-    lookup_results = {}
+    ip = ip.split('.')
+    backwards = '{}.{}.{}.{}'.format(*list(reversed(ip)))
+    rdns = '{}.{}'.format(backwards, 'score.senderscore.com')
 
-    for rl in replists:
-        host = '{}.{}'.format(backwards, rl)
-        try:
-            ret = socket.gethostbyname(host)
-        except socket.gaierror as e:
-            print('Error: No score found')
-            return
-        else:
-            if ret:
-                lookup_results[rl] = ret
+    try:
+        host = socket.gethostbyname(rdns)
+    except socket.gaierror:
+        print('Error: No score found')
+        os.sys.exit(1)
 
-    scores = {}
+    reputation = host.split('.')[3]
 
-    for k in lookup_results.keys():
-        v = lookup_results[k].split('.')[3]
-        scores[k] = v
-
-    return scores
-
-parser = ArgumentParser(prog='Sender Score Lookup',
-                        description='Retrieve the score of a IP from Sender Score aplication.',
-                        fromfile_prefix_chars='@',
-                        argument_default='s')
-
-parser.add_argument('ip', action='store', help='IP to be tested by Sender Score')
+    return reputation
 
 
 def main():
@@ -54,8 +39,17 @@ def main():
     score = get_senderscore(args.ip)
 
     if score:
-        print('{} has senderscore {}'.format(args.ip, score['score.senderscore.com']))
+        print('{} has senderscore {}'.format(args.ip, score))
 
+
+parser = ArgumentParser(prog='Sender Score Lookup',
+                        description='Retrieve the score from Sender Score.',
+                        fromfile_prefix_chars='@',
+                        argument_default='s')
+
+parser.add_argument('ip',
+                    action='store',
+                    help='IP to be tested by Sender Score')
 
 if __name__ == '__main__':
     main()
