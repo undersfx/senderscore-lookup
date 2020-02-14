@@ -2,15 +2,19 @@
 
 from argparse import ArgumentParser
 import socket
+import os
 
-def get_senderscore(ip):
-    '''Retrieve the score of a IP from Sender Score aplication'''
-
+def validade_ip(ip):
     try:
         socket.inet_aton(ip)
     except OSError:
         print('Error: Not a valid IP')
-        return
+        os.sys.exit(1)
+
+def get_senderscore(ip):
+    '''Retrieve the score of a IP from Sender Score aplication'''
+
+    validade_ip(ip)
 
     tmp = ip.split('.')
     backwards = '{}.{}.{}.{}'.format(tmp[3], tmp[2], tmp[1], tmp[0])

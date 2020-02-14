@@ -3,4 +3,5 @@ __pycache__/
 senderscore.egg-info/
 build/
 dist/
+.vscode/
 
