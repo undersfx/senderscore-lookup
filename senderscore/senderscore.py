@@ -2,6 +2,7 @@
 
 from argparse import ArgumentParser
 import socket
+import sys
 import os
 
 
@@ -9,7 +10,7 @@ def validade_ip(ip):
     try:
         socket.inet_aton(ip)
     except OSError:
-        print('Error: Not a valid IP')
+        print('Error: Not a valid IP', file=sys.stderr)
         os.sys.exit(1)
 
 
@@ -25,7 +26,7 @@ def get_senderscore(ip):
     try:
         host = socket.gethostbyname(rdns)
     except socket.gaierror:
-        print('Error: No score found')
+        print('Error: No score found', file=sys.stderr)
         os.sys.exit(1)
 
     reputation = host.split('.')[3]
