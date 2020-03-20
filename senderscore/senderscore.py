@@ -6,18 +6,19 @@ import sys
 import os
 
 
-def validade_ip(ip):
+def is_valid_ip(ip):
+    '''Validate the syntax of a IP.'''
+
     try:
         socket.inet_aton(ip)
     except OSError:
-        print('Error: Not a valid IP', file=sys.stderr)
-        os.sys.exit(1)
+        return False
+
+    return True
 
 
-def get_senderscore(ip):
-    '''Retrieve the score of a IP from Sender Score aplication'''
-
-    validade_ip(ip)
+def get_score(ip):
+    '''Retrieve the score of a IP from Sender Score aplication.'''
 
     ip = ip.split('.')
     backwards = '{}.{}.{}.{}'.format(*list(reversed(ip)))
@@ -26,31 +27,42 @@ def get_senderscore(ip):
     try:
         host = socket.gethostbyname(rdns)
     except socket.gaierror:
-        print('Error: No score found', file=sys.stderr)
+        return ''
+
+    score = host.split('.')[3]
+
+    return score
+
+
+def cli(ip):
+    '''Command line interface resolution'''
+
+    if not is_valid_ip(ip):
+        print('Error: Not a valid IP', file=sys.stderr)
         os.sys.exit(1)
 
-    reputation = host.split('.')[3]
+    score = get_score(ip)
 
-    return reputation
+    if score:
+        print('{} has senderscore {}'.format(ip, score))
+    else:
+        print('Error: No score found', file=sys.stderr)
+        os.sys.exit(1)
 
 
 def main():
     args = parser.parse_args()
-
-    score = get_senderscore(args.ip)
-
-    if score:
-        print('{} has senderscore {}'.format(args.ip, score))
+    cli(args.ip)
 
 
 parser = ArgumentParser(prog='Sender Score Lookup',
-                        description='Retrieve the score from Sender Score.',
+                        description='Retrieve the score of a IP from Sender Score.',
                         fromfile_prefix_chars='@',
                         argument_default='s')
 
 parser.add_argument('ip',
                     action='store',
-                    help='IP to be tested by Sender Score')
+                    help='IP to be tested')
 
 if __name__ == '__main__':
     main()
