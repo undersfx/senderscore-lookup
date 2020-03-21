@@ -4,4 +4,5 @@ senderscore.egg-info/
 build/
 dist/
 .vscode/
+.pytest_cache/
 
