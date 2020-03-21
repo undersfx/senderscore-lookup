@@ -1,0 +1,10 @@
+language: python
+python:
+  - 3.8
+install:
+ - pip install -q -r requirements-dev.txt codecov
+script:
+ - flake8
+ - pytest --cov=senderscore
+after_success:
+ - codecov
