@@ -1,6 +1,7 @@
 from argparse import ArgumentParser
 from senderscore import senderscore
 import pytest
+import sys
 
 IP = '179.188.249.171'
 INVALID_IP = '179.188.249.1717'
@@ -53,3 +54,15 @@ def test_config_parser_prog_attribute(parser):
 
 def test_config_parser_type(parser):
     assert isinstance(parser, ArgumentParser)
+
+
+def test_main_function_exit():
+    with pytest.raises(SystemExit):
+        senderscore.main()
+
+
+def test_main_function(capsys):
+    sys.argv = ['senderscore.py', IP]
+    senderscore.main()
+    captured = capsys.readouterr()
+    assert f'{IP} has senderscore' in captured.out
