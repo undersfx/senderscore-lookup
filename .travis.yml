@@ -2,7 +2,7 @@ language: python
 python:
   - 3.8
 install:
- - pip install -q -r requirements-dev.txt codecov
+ - pip install -q -r requirements-dev.txt codecov senderscore
 script:
  - flake8
  - pytest --cov=senderscore
