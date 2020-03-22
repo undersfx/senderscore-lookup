@@ -50,19 +50,26 @@ def cli(ip):
         os.sys.exit(1)
 
 
+def config_parser():
+    '''Creates the parser object'''
+
+    parser = ArgumentParser(prog='Sender Score Lookup',
+                            description='Retrieve the score of a IP from Sender Score.',
+                            fromfile_prefix_chars='@',
+                            argument_default='s')
+
+    parser.add_argument('ip',
+                        action='store',
+                        help='IP to be tested')
+
+    return parser
+
+
 def main():
+    parser = config_parser()
     args = parser.parse_args()
     cli(args.ip)
 
-
-parser = ArgumentParser(prog='Sender Score Lookup',
-                        description='Retrieve the score of a IP from Sender Score.',
-                        fromfile_prefix_chars='@',
-                        argument_default='s')
-
-parser.add_argument('ip',
-                    action='store',
-                    help='IP to be tested')
 
 if __name__ == '__main__':
     main()
