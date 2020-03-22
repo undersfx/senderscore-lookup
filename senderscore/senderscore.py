@@ -39,7 +39,7 @@ def cli(ip):
 
     if not is_valid_ip(ip):
         print('Error: Not a valid IP', file=sys.stderr)
-        os.sys.exit(1)
+        os.sys.exit(65)
 
     score = get_score(ip)
 
@@ -47,7 +47,7 @@ def cli(ip):
         print('{} has senderscore {}'.format(ip, score))
     else:
         print('Error: No score found', file=sys.stderr)
-        os.sys.exit(1)
+        os.sys.exit(69)
 
 
 def config_parser():

@@ -6,6 +6,7 @@ IP = '179.188.249.171'
 INVALID_IP = '179.188.249.1717'
 NO_SCORE_IP = '179.188.249.0'
 
+
 @pytest.fixture(scope='session')
 def parser():
     parser = senderscore.config_parser()
