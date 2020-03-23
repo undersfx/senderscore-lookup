@@ -1,17 +1,20 @@
 # Senderscore
 Command line tool for Sender Score lookups.
 
+[![Build Status](https://travis-ci.org/undersfx/senderscore-lookup.svg?branch=master)](https://travis-ci.org/undersfx/senderscore-lookup) [![codecov](https://codecov.io/gh/undersfx/senderscore-lookup/branch/master/graph/badge.svg)](https://codecov.io/gh/undersfx/senderscore-lookup) [![Python 3](https://pyup.io/repos/github/undersfx/senderscore-lookup/python-3-shield.svg)](https://pyup.io/account/repos/github/undersfx/senderscore-lookup)[![Updates](https://pyup.io/repos/github/undersfx/senderscore-lookup/shield.svg)](https://pyup.io/account/repos/github/undersfx/senderscore-lookup)
+
 ### What the heck is Sender Score ?
 Sender Score is a number between 0 and 100 that identifies your sender reputation and shows you how mailbox providers view your IP address.
 
 The project is maintained by Return Path. For more information about the Sender Score project, visit the official FAQ page at https://www.senderscore.org/faq/.
 
-## Installation
+
+# Usage
+
+### Installation
 ```shell
 pip install senderscore
 ```
-
-## Usage
 
 ### CLI
 ```shell
@@ -36,19 +39,24 @@ ip = '177.136.19.206' # e.g.
 score = senderscore.get_score(ip)
 ```
 
-## API
+
+# API
+
+Validate the syntax of a given IP:
 ```python
-is_valid_ip(ip: str) -> bool
+senderscore.is_valid_ip(ip: str) -> bool
 ```
-Validate the syntax of a given IP.
+
+Retrieve the Sender Score value for the given IP:
 ```python
-get_score(ip: str) -> str
+senderscore.get_score(ip: str) -> str
 ```
-Retrieve the Sender Score value for the given IP.
+
+Run the cli resolution for the given IP:
 ```python
-cli(ip: str) -> None
+senderscore.cli(ip: str) -> None
 ```
-Run the cli resolution for the given IP.
+
 
 # How to Contribute
 Just fork the project and send your pull requests (with tests please).
