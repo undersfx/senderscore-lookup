@@ -1,5 +1,5 @@
 atomicwrites==1.4.0
-attrs==19.3.0
+attrs==20.2.0
 colorama==0.4.3
 coverage==5.1
 entrypoints==0.3
