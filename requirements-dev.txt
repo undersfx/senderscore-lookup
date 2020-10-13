@@ -1,6 +1,6 @@
 atomicwrites==1.4.0
 attrs==19.3.0
-colorama==0.4.3
+colorama==0.4.4
 coverage==5.1
 entrypoints==0.3
 flake8==3.8.1
