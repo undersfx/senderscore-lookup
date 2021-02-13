@@ -61,6 +61,18 @@ def test_main_function_exit():
         senderscore.main()
 
 
+def test_main_function_blank_ip_arg(capsys):
+    sys.argv = ['senderscore.py', '']
+    with pytest.raises(SystemExit):
+        senderscore.main()
+
+
+def test_main_function_invalid_ip_arg(capsys):
+    sys.argv = ['senderscore.py', '1']
+    with pytest.raises(SystemExit):
+        senderscore.main()
+
+
 def test_main_function(capsys):
     sys.argv = ['senderscore.py', IP]
     senderscore.main()
