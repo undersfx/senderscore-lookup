@@ -6,10 +6,14 @@ import sys
 import os
 
 
-def is_valid_ip(ip):
+def is_valid_ip(ip: str):
     '''Validate the syntax of a IP.'''
 
     try:
+        octets = ip.split('.')
+        if not len(octets) == 4:
+            return False
+
         socket.inet_aton(ip)
     except OSError:
         return False
