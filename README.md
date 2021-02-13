@@ -1,7 +1,7 @@
 # Senderscore
 Command line tool for Sender Score lookups.
 
-[![Build Status](https://travis-ci.org/undersfx/senderscore-lookup.svg?branch=master)](https://travis-ci.org/undersfx/senderscore-lookup) [![codecov](https://codecov.io/gh/undersfx/senderscore-lookup/branch/master/graph/badge.svg)](https://codecov.io/gh/undersfx/senderscore-lookup) [![Python 3](https://pyup.io/repos/github/undersfx/senderscore-lookup/python-3-shield.svg)](https://pyup.io/account/repos/github/undersfx/senderscore-lookup)[![Updates](https://pyup.io/repos/github/undersfx/senderscore-lookup/shield.svg)](https://pyup.io/account/repos/github/undersfx/senderscore-lookup)
+[![Build Status](https://travis-ci.com/undersfx/senderscore-lookup.svg?branch=master)](https://travis-ci.com/undersfx/senderscore-lookup) [![codecov](https://codecov.io/gh/undersfx/senderscore-lookup/branch/master/graph/badge.svg)](https://codecov.io/gh/undersfx/senderscore-lookup) [![Python 3](https://pyup.io/repos/github/undersfx/senderscore-lookup/python-3-shield.svg)](https://pyup.io/account/repos/github/undersfx/senderscore-lookup)[![Updates](https://pyup.io/repos/github/undersfx/senderscore-lookup/shield.svg)](https://pyup.io/account/repos/github/undersfx/senderscore-lookup)
 
 ### What the heck is Sender Score ?
 Sender Score is a number between 0 and 100 that identifies your sender reputation and shows you how mailbox providers view your IP address.
