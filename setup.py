@@ -1,11 +1,24 @@
+import io
+import os
 from setuptools import setup, find_packages
 
-with open('requirements.txt') as f:
-    requirements = f.readlines()
 
-long_description = '''Command Line Tool for Lookup at Sender Score.
+def read(*names, **kwargs):
+    """Read a file."""
+    content = ""
+    with io.open(
+        os.path.join(os.path.dirname(__file__), *names),
+        encoding=kwargs.get("encoding", "utf8"),
+    ) as open_file:
+        if kwargs.get('type') == 'list':
+            content = list(map(lambda s: s.strip(), open_file.readlines()))
+        else:
+            content = open_file.read().strip()
+    return content
 
-More information at www.senderscore.org.'''
+
+long_description = read('README.md')
+requirements = read('requirements.in', type='list')
 
 setup(
         name='senderscore',
