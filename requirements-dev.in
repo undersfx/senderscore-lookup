@@ -3,3 +3,5 @@ flake8
 pytest
 pytest-cov
 pip-tools
+wheel
+twine

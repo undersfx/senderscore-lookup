@@ -1,21 +1,33 @@
 SHELL := /bin/bash
 .PHONY: tests
 
+
 lint:
-	@echo ">>> Running lints"
-	@flake8
+	flake8
 
 test: lint
-	@echo ">>> Running tests"
-	@pytest -v --cov=senderscore
+	pytest -v --cov=senderscore
 
-setup:
-	pip install -r requirements-dev.txt
+update:
+	pip install --upgrade -r requirements-dev.in
 	pip install -e .
 
-build:
+pip-compile:
+	pip-compile -q --output-file=requirements-dev.txt requirements-dev.in
+	pip-compile -q --output-file=requirements.txt requirements.in
+
+build: clean
 	python setup.py sdist bdist_wheel
 	twine check dist/*
 
 publish:
 	twine upload dist/*
+
+clean:
+	-@find ./senderscore -name '__pycache__' -exec rm -rf {} \;
+	-@find ./tests -name '__pycache__' -exec rm -rf {} \;
+	-@find ./ -name '.pytest_cache' -exec rm -rf {} \;
+	-@rm -rf *.egg-info
+	-@rm -rf build
+	-@rm -rf dist
+	-@rm .coverage
