@@ -90,7 +90,7 @@ toml==0.10.2
     # via pytest
 tqdm==4.59.0
     # via twine
-twine==3.3.0
+twine==3.4.1
     # via -r requirements-dev.in
 urllib3==1.26.3
     # via requests
