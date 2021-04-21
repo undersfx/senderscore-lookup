@@ -30,7 +30,7 @@ flake8==3.8.4
     # via -r requirements-dev.in
 idna==2.10
     # via requests
-importlib-metadata==3.7.2
+importlib-metadata==4.0.1
     # via keyring
 iniconfig==1.1.1
     # via pytest
