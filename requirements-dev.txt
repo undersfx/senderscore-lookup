@@ -81,7 +81,7 @@ requests==2.25.1
     #   twine
 rfc3986==1.4.0
     # via twine
-six==1.15.0
+six==1.16.0
     # via
     #   bleach
     #   readme-renderer
