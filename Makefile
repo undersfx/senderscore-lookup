@@ -10,6 +10,9 @@ test: lint
 
 update:
 	pip install --upgrade -r requirements-dev.in
+	pip install --upgrade -r requirements.in
+	pip-compile -q --upgrade --output-file=requirements-dev.txt requirements-dev.in
+	pip-compile -q --upgrade --output-file=requirements.txt requirements.in
 	pip install -e .
 
 pip-compile:
