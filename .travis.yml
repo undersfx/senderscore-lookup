@@ -2,11 +2,12 @@ language: python
 python:
   - 3.8
 install:
- - pip install -q -r requirements-dev.txt 
- - pip install -q codecov
-script:
  - pip install senderscore
+ - pip install -q pip-tools codecov
+ - pip-sync requirements.txt requirements-dev.txt
+script:
  - flake8
+ - bandit -r senderscore -x tests -ll -ii
  - pytest --cov=senderscore
 after_success:
  - codecov
