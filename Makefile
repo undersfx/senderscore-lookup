@@ -14,8 +14,8 @@ update:
 	pip install -e .
 
 pip-compile:
-	pip-compile -q --upgrade --generate-hashes --output-file=requirements-dev.txt requirements-dev.in
-	pip-compile -q --upgrade --generate-hashes --output-file=requirements.txt requirements.in
+	pip-compile -q --output-file=requirements-dev.txt requirements-dev.in
+	pip-compile -q --output-file=requirements.txt requirements.in
 
 build: clean
 	python setup.py sdist bdist_wheel
