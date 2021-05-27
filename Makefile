@@ -1,5 +1,5 @@
 SHELL := /bin/bash
-.PHONY: tests
+.PHONY: tests update
 
 
 lint:

@@ -3,7 +3,7 @@ from senderscore import senderscore
 import pytest
 import sys
 
-IP = '179.188.249.171'
+IP = '52.128.41.34'
 INVALID_IP = '179.188.249.1717'
 NO_SCORE_IP = '179.188.249.0'
 
