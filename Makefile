@@ -12,6 +12,8 @@ update:
 	pip install --upgrade -r requirements-dev.in
 	pip install --upgrade -r requirements.in
 	pip install -e .
+	pip-compile --upgrade -q --output-file=requirements-dev.txt requirements-dev.in
+	pip-compile --upgrade -q --output-file=requirements.txt requirements.in
 
 pip-compile:
 	pip-compile -q --output-file=requirements-dev.txt requirements-dev.in
