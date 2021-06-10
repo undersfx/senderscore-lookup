@@ -34,7 +34,7 @@ gitdb==4.0.7
     # via gitpython
 gitpython==3.1.17
     # via bandit
-idna==2.10
+idna==3.2
     # via requests
 importlib-metadata==4.5.0
     # via
