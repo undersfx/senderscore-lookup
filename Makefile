@@ -5,7 +5,11 @@ SHELL := /bin/bash
 lint:
 	flake8
 
-test: lint
+test-cli:
+	pip install -e .
+	senderscore -h
+
+test: lint test-cli
 	pytest -v --cov=senderscore
 
 update:
