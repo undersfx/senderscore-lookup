@@ -4,6 +4,8 @@
 #
 #    pip-compile --output-file=requirements-dev.txt requirements-dev.in
 #
+atomicwrites==1.4.0
+    # via pytest
 attrs==21.2.0
     # via pytest
 bandit==1.7.0
@@ -12,40 +14,44 @@ bleach==3.3.0
     # via readme-renderer
 certifi==2021.5.30
     # via requests
-cffi==1.14.5
-    # via cryptography
 chardet==4.0.0
     # via requests
 click==8.0.1
     # via pip-tools
+codespell==2.1.0
+    # via -r requirements-dev.in
 colorama==0.4.4
-    # via twine
+    # via
+    #   bandit
+    #   click
+    #   pytest
+    #   twine
 coverage==5.5
     # via
     #   -r requirements-dev.in
     #   pytest-cov
-cryptography==3.4.7
-    # via secretstorage
 docutils==0.17.1
     # via readme-renderer
 flake8==3.9.2
     # via -r requirements-dev.in
 gitdb==4.0.7
     # via gitpython
-gitpython==3.1.17
+gitpython==3.1.18
     # via bandit
 idna==2.10
     # via requests
-importlib-metadata==4.5.0
+importlib-metadata==4.6.0
     # via
+    #   click
+    #   flake8
     #   keyring
+    #   pep517
+    #   pluggy
+    #   pytest
+    #   stevedore
     #   twine
 iniconfig==1.1.1
     # via pytest
-jeepney==0.6.0
-    # via
-    #   keyring
-    #   secretstorage
 keyring==23.0.1
     # via twine
 mccabe==0.6.1
@@ -58,7 +64,7 @@ pbr==5.6.0
     # via stevedore
 pep517==0.10.0
     # via pip-tools
-pip-tools==6.1.0
+pip-tools==6.2.0
     # via -r requirements-dev.in
 pkginfo==1.7.0
     # via twine
@@ -68,8 +74,6 @@ py==1.10.0
     # via pytest
 pycodestyle==2.7.0
     # via flake8
-pycparser==2.20
-    # via cffi
 pyflakes==2.3.1
     # via flake8
 pygments==2.9.0
@@ -82,6 +86,8 @@ pytest==6.2.4
     # via
     #   -r requirements-dev.in
     #   pytest-cov
+pywin32-ctypes==0.2.0
+    # via keyring
 pyyaml==5.4.1
     # via bandit
 readme-renderer==29.0
@@ -94,8 +100,6 @@ requests==2.25.1
     #   twine
 rfc3986==1.5.0
     # via twine
-secretstorage==3.3.1
-    # via keyring
 six==1.16.0
     # via
     #   bandit
@@ -110,18 +114,27 @@ toml==0.10.2
     #   pep517
     #   pytest
     #   pytest-cov
-tqdm==4.61.0
+tqdm==4.61.1
     # via twine
 twine==3.4.1
     # via -r requirements-dev.in
-urllib3==1.26.5
+typing-extensions==3.10.0.0
+    # via
+    #   gitpython
+    #   importlib-metadata
+urllib3==1.26.6
     # via requests
 webencodings==0.5.1
     # via bleach
 wheel==0.36.2
-    # via -r requirements-dev.in
+    # via
+    #   -r requirements-dev.in
+    #   pip-tools
 zipp==3.4.1
-    # via importlib-metadata
+    # via
+    #   importlib-metadata
+    #   pep517
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
+# setuptools

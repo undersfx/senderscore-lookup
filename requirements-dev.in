@@ -6,3 +6,4 @@ pytest-cov
 pip-tools
 wheel
 twine
+codespell
