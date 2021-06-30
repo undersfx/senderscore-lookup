@@ -22,7 +22,7 @@ def is_valid_ip(ip: str):
 
 
 def get_score(ip):
-    '''Retrieve the score of a IP from Sender Score aplication.'''
+    '''Retrieve the score of a IP from Sender Score application.'''
 
     ip = ip.split('.')
     backwards = '{}.{}.{}.{}'.format(*list(reversed(ip)))

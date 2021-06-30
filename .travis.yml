@@ -4,9 +4,10 @@ python:
 install:
  - pip install senderscore
  - pip install -q pip-tools codecov
- - pip-sync requirements.txt requirements-dev.txt
+ - pip-sync requirements-dev.txt
 script:
  - flake8
+ - codespell -S ./.venv
  - bandit -r senderscore -x tests -ll -ii
  - pytest --cov=senderscore
 after_success:
