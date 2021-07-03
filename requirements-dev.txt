@@ -130,7 +130,7 @@ wheel==0.36.2
     # via
     #   -r requirements-dev.in
     #   pip-tools
-zipp==3.4.1
+zipp==3.5.0
     # via
     #   importlib-metadata
     #   pep517
