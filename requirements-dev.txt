@@ -56,7 +56,7 @@ keyring==23.0.1
     # via twine
 mccabe==0.6.1
     # via flake8
-packaging==20.9
+packaging==21.0
     # via
     #   bleach
     #   pytest
