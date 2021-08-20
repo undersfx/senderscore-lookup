@@ -24,7 +24,6 @@ setup(
         name='senderscore',
         version='0.1.5',
         author='Thiago "Undersfx" Rodrigues',
-        author_email='undersoft.corp@gmail.com',
         url='https://github.com/undersfx/senderscore-lookup',
         description='Senderscore command line lookup tool',
         long_description=long_description,
