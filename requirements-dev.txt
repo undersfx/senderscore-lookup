@@ -14,7 +14,7 @@ bleach==4.0.0
     # via readme-renderer
 certifi==2021.5.30
     # via requests
-charset-normalizer==2.0.4
+charset-normalizer==2.0.5
     # via requests
 click==8.0.1
     # via pip-tools
