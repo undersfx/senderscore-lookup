@@ -91,7 +91,7 @@ pywin32-ctypes==0.2.0
     # via keyring
 pyyaml==5.4.1
     # via bandit
-readme-renderer==29.0
+readme-renderer==30.0
     # via twine
 requests==2.26.0
     # via
