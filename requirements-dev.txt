@@ -33,7 +33,7 @@ coverage==5.5
     #   pytest-cov
 docutils==0.17.1
     # via readme-renderer
-flake8==3.9.2
+flake8==4.0.0
     # via -r requirements-dev.in
 gitdb==4.0.7
     # via gitpython
