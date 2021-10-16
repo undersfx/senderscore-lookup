@@ -106,7 +106,7 @@ six==1.16.0
     #   bandit
     #   bleach
     #   readme-renderer
-smmap==4.0.0
+smmap==5.0.0
     # via gitdb
 stevedore==3.3.0
     # via bandit
