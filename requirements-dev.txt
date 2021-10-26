@@ -31,7 +31,7 @@ coverage==5.5
     # via
     #   -r requirements-dev.in
     #   pytest-cov
-docutils==0.17.1
+docutils==0.18
     # via readme-renderer
 flake8==3.9.2
     # via -r requirements-dev.in
