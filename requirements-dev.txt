@@ -114,7 +114,7 @@ toml==0.10.2
     # via
     #   pytest
     #   pytest-cov
-tomli==1.2.1
+tomli==1.2.2
     # via pep517
 tqdm==4.62.0
     # via twine
