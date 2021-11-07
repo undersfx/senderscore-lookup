@@ -22,7 +22,7 @@ requirements = read('requirements.in', type='list')
 
 setup(
         name='senderscore',
-        version='0.1.5',
+        version='0.1.6',
         author='Thiago "Undersfx" Rodrigues',
         url='https://github.com/undersfx/senderscore-lookup',
         description='Senderscore command line lookup tool',
