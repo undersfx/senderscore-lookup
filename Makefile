@@ -23,6 +23,7 @@ pip-compile:
 build: clean
 	python setup.py sdist bdist_wheel
 	twine check dist/*
+	pip install -e .
 
 publish:
 	twine upload dist/*
