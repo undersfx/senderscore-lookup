@@ -11,6 +11,8 @@ test-cli:
 
 test: lint test-cli
 	pytest -v --cov=senderscore
+	codespell -S ./.venv
+	bandit -r senderscore -x tests -ll -ii
 
 update:
 	pip install --upgrade -r requirements-dev.in
@@ -23,7 +25,6 @@ pip-compile:
 build: clean
 	python setup.py sdist bdist_wheel
 	twine check dist/*
-	pip install -e .
 
 publish:
 	twine upload dist/*
