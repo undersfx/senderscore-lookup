@@ -55,7 +55,7 @@ packaging==21.2
     # via
     #   bleach
     #   pytest
-pbr==5.7.0
+pbr==5.8.0
     # via stevedore
 pep517==0.12.0
     # via pip-tools
