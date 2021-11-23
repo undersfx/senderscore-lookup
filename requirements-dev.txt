@@ -31,7 +31,7 @@ coverage[toml]==6.1.1
     # via
     #   -r requirements-dev.in
     #   pytest-cov
-docutils==0.18
+docutils==0.18.1
     # via readme-renderer
 flake8==4.0.1
     # via -r requirements-dev.in
