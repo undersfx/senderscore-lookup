@@ -47,7 +47,7 @@ importlib-metadata==4.8.1
     #   twine
 iniconfig==1.1.1
     # via pytest
-keyring==23.2.1
+keyring==23.3.0
     # via twine
 mccabe==0.6.1
     # via flake8
