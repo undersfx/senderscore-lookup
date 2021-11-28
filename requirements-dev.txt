@@ -27,7 +27,7 @@ colorama==0.4.4
     #   pytest
     #   tqdm
     #   twine
-coverage[toml]==6.1.1
+coverage[toml]==6.2
     # via
     #   -r requirements-dev.in
     #   pytest-cov
