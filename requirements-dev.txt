@@ -113,7 +113,7 @@ tqdm==4.62.3
     # via twine
 twine==3.5.0
     # via -r requirements-dev.in
-typing-extensions==3.10.0.2
+typing-extensions==4.0.1
     # via gitpython
 urllib3==1.26.7
     # via requests
