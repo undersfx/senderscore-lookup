@@ -111,7 +111,7 @@ tomli==1.2.2
     #   pep517
 tqdm==4.62.3
     # via twine
-twine==3.5.0
+twine==3.7.1
     # via -r requirements-dev.in
 typing-extensions==3.10.0.2
     # via gitpython
