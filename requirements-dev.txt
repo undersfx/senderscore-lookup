@@ -41,7 +41,7 @@ gitpython==3.1.24
     # via bandit
 idna==3.3
     # via requests
-importlib-metadata==4.8.1
+importlib-metadata==4.8.3
     # via
     #   keyring
     #   twine
