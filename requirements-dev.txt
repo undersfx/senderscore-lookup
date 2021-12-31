@@ -71,7 +71,7 @@ pycodestyle==2.8.0
     # via flake8
 pyflakes==2.4.0
     # via flake8
-pygments==2.10.0
+pygments==2.11.1
     # via readme-renderer
 pyparsing==2.4.7
     # via packaging
