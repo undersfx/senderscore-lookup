@@ -1,0 +1,4 @@
+schedule: every month
+update: insecure
+requirements:
+ - requirements-dev.txt
