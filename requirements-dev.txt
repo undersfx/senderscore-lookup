@@ -75,7 +75,7 @@ pygments==2.11.2
     # via readme-renderer
 pyparsing==3.0.7
     # via packaging
-pytest==6.2.5
+pytest==7.0.1
     # via
     #   -r requirements-dev.in
     #   pytest-cov
