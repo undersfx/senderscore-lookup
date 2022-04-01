@@ -107,7 +107,7 @@ tomli==2.0.1
     # via
     #   coverage
     #   pep517
-tqdm==4.62.3
+tqdm==4.63.1
     # via twine
 twine==3.7.1
     # via -r requirements-dev.in
