@@ -103,7 +103,7 @@ stevedore==3.5.0
     # via bandit
 toml==0.10.2
     # via pytest
-tomli==2.0.0
+tomli==2.0.1
     # via
     #   coverage
     #   pep517
