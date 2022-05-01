@@ -109,7 +109,7 @@ tomli==2.0.1
     #   pep517
 tqdm==4.64.0
     # via twine
-twine==3.7.1
+twine==4.0.0
     # via -r requirements-dev.in
 urllib3==1.26.8
     # via requests
