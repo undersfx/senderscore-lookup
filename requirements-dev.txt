@@ -108,7 +108,7 @@ tomli==2.0.1
     #   coverage
     #   pep517
     #   pytest
-twine==4.0.0
+twine==4.0.1
     # via -r requirements-dev.in
 urllib3==1.26.9
     # via
